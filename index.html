@@ -6,17 +6,52 @@
   <title>Shadow Joker Gali Shikha</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      background: #ffffff;
       font-family: 'Noto Sans Bengali', sans-serif;
-      color: #111;
+      color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
       overflow: hidden;
+      position: relative;
+      background: #000;
+    }
+
+    /* Animated Gradient Background */
+    body::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, #ff00ff33, #000000 70%);
+      animation: rotate 20s linear infinite;
+      z-index: -2;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Floating Lights */
+    body::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.ibb.co/pdQ6gYt/floating-lights.gif') center/cover no-repeat;
+      opacity: 0.06;
+      mix-blend-mode: screen;
+      z-index: -1;
     }
 
     h1 {
@@ -38,13 +73,13 @@
     #galiBox {
       padding: 20px;
       font-size: 1.6rem;
-      border: 2px solid #ddd;
+      border: 2px solid #ff00ff55;
       border-radius: 10px;
-      background: #f7f7f7;
+      background: rgba(0, 0, 0, 0.6);
       text-align: center;
       max-width: 90%;
       margin: 20px;
-      box-shadow: 0 0 10px #ccc;
+      box-shadow: 0 0 20px #ff00ff44;
       word-wrap: break-word;
     }
 
@@ -66,6 +101,7 @@
       cursor: pointer;
       transition: 0.3s;
       font-family: 'Noto Sans Bengali', sans-serif;
+      box-shadow: 0 0 10px #ff00ff55;
     }
 
     button:hover {
@@ -82,13 +118,16 @@
       text-align: center;
       font-family: 'Noto Sans Bengali', sans-serif;
       margin-bottom: 10px;
+      background: #111;
+      color: #fff;
     }
 
     .credit {
       position: absolute;
       bottom: 10px;
       font-size: 0.9rem;
-      color: #555;
+      color: #aaa;
+      text-shadow: 0 0 5px #ff00ff99;
     }
   </style>
 </head>
